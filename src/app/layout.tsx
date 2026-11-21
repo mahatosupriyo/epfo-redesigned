@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import ClarityProvider from "./ClarityProvider";
 
 export const metadata: Metadata = {
   title: "EPFO Member Services",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return <html lang="en"><body style={{margin: 0}}>{children}</body></html>;
+  return <html lang="en">
+    <body style={{ margin: 0 }}>
+      <ClarityProvider />
+      {children}
+    </body>
+  </html>;
 }
